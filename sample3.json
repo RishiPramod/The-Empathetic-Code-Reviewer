@@ -1,0 +1,8 @@
+{
+  "code_snippet": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nstruct User {\n    bool isActive;\n    bool profileComplete;\n};\n\nvector<User> getActiveUsers(const vector<User>& users) {\n    vector<User> active;\n    for (size_t i = 0; i < users.size(); ++i) {\n        if (users[i].isActive == true && users[i].profileComplete == true) {\n            active.push_back(users[i]);\n        }\n    }\n    return active;\n}\n\nint main() {\n    vector<User> userList = {{true, true}, {false, true}, {true, false}};\n    vector<User> activeUsers = getActiveUsers(userList);\n    cout << \"Active Users: \" << activeUsers.size() << endl;\n    return 0;\n}",
+  "review_comments": [
+    "Consider using a range-based for loop instead of manual indexing.",
+    "Avoid explicit comparison with '== true' for boolean values.",
+    "Use const references where possible to avoid unnecessary copying."
+  ]
+}

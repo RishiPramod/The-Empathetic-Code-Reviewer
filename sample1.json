@@ -1,0 +1,8 @@
+{
+  "code_snippet": "function getActiveUsers(users) {\n    let active = [];\n    for (let i = 0; i < users.length; i++) {\n        if (users[i].isActive === true && users[i].profileComplete === true) {\n            active.push(users[i]);\n        }\n    }\n    return active;\n}\n\nconst result = getActiveUsers(userList);\nconsole.log(result);",
+  "review_comments": [
+    "Consider using a higher-order function like filter instead of a manual loop.",
+    "The variable name 'active' could be more descriptive, like activeUsers.",
+    "Avoid comparing booleans explicitly with '=== true'."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "code_snippet": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class UserUtils {\n    public static List<User> getActiveUsers(List<User> users) {\n        List<User> active = new ArrayList<>();\n        for (User u : users) {\n            if (u.isActive() == true && u.isProfileComplete() == true) {\n                active.add(u);\n            }\n        }\n        return active;\n    }\n\n    public static void main(String[] args) {\n        List<User> userList = new ArrayList<>();\n        // Assume userList is populated\n        List<User> activeUsers = getActiveUsers(userList);\n        System.out.println(activeUsers);\n    }\n}",
+  "review_comments": [
+    "Use method references or streams instead of manual loops for filtering.",
+    "Variable name 'u' should be more descriptive.",
+    "Boolean comparison '== true' is unnecessary in Java as well."
+  ]
+}
